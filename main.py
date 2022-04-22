@@ -29,7 +29,7 @@ async def start(ctx):
             msg = await bot.wait_for('message',check=check_func)
             print("recv",msg.content)
             m = (msg.content.lower()).split(" ")
-            if m in stop:
+            if m[0] in stop:
                 print("stop")
                 await ctx.send("Stopped")
                 break
@@ -60,10 +60,10 @@ async def start(ctx):
                     except:
                         pass
 
-@bot.command
+@bot.command()
 async def coms(ctx):
     msg = ""
-    with open("coms.json","r") as f:
+    with open("com.json","r") as f:
         com = load(f)
         for i in com.keys():
             msg += f"{i}: {com[i]}\n"

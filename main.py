@@ -69,6 +69,21 @@ async def coms(ctx):
             msg += f"{i}: {com[i]}\n"
     await ctx.send(msg)
 
+
+@bot.command()
+async def t(ctx, channelid:int):
+    channel = await bot.fetch_channel(channelid)
+    async with channel.typing():
+        def check(m):
+            return (m.author == ctx.author) and (m.channel == ctx.channel)
+        try:
+            msg = await bot.wait_for('message',check=check,timeout=30)
+        except:
+            return
+        else:
+            await channel.send(msg.content)
+
+
 with open("token.json","r") as f:
     token = load(f)
 

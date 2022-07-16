@@ -35,26 +35,25 @@ async def start(ctx):
                 break
             
             else:
-                if com[m[0]] == "click":
+                # if com[m[0]] == "click": bad code
+                if m[0] == com["click"]:
                     g.click()
-                
-                elif com[m[0]] == "right":
+                elif m[0] == com["right"]:
                     try:
                         g.moveRel(int(m[1]),0)
-                        print("here")
                     except:
                         pass
-                elif com[m[0]] == "left":
+                elif m[0] == com["left"]:
                     try:
                         g.moveRel(int(m[1])*-1,0)
                     except:
                         pass
-                elif com[m[0]] == "up":
+                elif m[0] == com["up"]:
                     try:
                         g.moveRel(0,int(m[1])*-1)
                     except:
                         pass
-                elif com[m[0]] == "down":
+                elif m[0] == com["down"]:
                     try:
                         g.moveRel(0,int(m[1]))
                     except:

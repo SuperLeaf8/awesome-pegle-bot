@@ -1,5 +1,5 @@
 {
-    "shoot": "click",
+    "click": "click",
     "right": "right",
     "left": "left",
     "down": "down",

@@ -144,7 +144,7 @@ class PeggleBot(commands.Cog):
 
 bot.add_cog(PeggleBot(bot))
 
-with open("token.json","r") as f:
+with open("token.txt","r") as f:
     token = f.read()
 
 bot.run(token)

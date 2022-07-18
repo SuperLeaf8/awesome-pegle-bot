@@ -4,6 +4,7 @@ from discord.ext import commands
 import pyautogui as g
 from json import load
 from random import randint
+import sys
 
 bot = commands.Bot(command_prefix="p!")
 
@@ -141,6 +142,11 @@ class PeggleBot(commands.Cog):
     async def toggle(self,ctx):
         self.tog = not self.tog
         await ctx.send(f"user control {self.tog}")
+    
+    @commands.check(if_user)
+    @commands.command()
+    async def exit(self,ctx):
+        sys.exit()
 
 bot.add_cog(PeggleBot(bot))
 
